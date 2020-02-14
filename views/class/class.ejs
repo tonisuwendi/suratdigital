@@ -1,0 +1,58 @@
+<%- include('../templates/header.ejs'); %>
+
+<div class="top">
+    <a href="/class/<%= clss %>"><i class="fa fa-chevron-left"></i> Kembali</a>
+</div>
+
+<div class="core">
+    <h2 class="title">Kelas <%= kelas %></h2>
+    <% if(letter.length > 0){ %>
+    <% letter.forEach(function(letter){ %>
+    <a href="/letter/<%= letter.id_letter %>">
+        <div class="list">
+            <h2 class="name"><%= letter.name %></h2>
+            <% if(letter.type == "1"){ %>
+            <p><%= letter.title %> &bull; <span>Sakit</span></p>
+            <% }else if(letter.type == "2"){ %>
+            <p><%= letter.title %> &bull; <span class="permi">Izin</span></p>
+            <% }else{ %>
+            <p><%= letter.title %> &bull; <span class="disp">Dispen</span></p>
+            <% } %>
+        </div>
+    </a>
+    <% }) %>
+    <% }else{ %>
+    <div class="list list-not">
+        <img src="/public/img/not.png" class="icon">
+        <p>NIHIL.. Tidak ada surat yang masuk di kelas <%= kelas %></p>
+    </div>
+    <% } %>
+</div>
+<div class="bottom-menu">
+    <a href="/">
+        <div class="item item-home">
+            <div class="main">
+                <img src="/public/img/home-menu-color.png" class="home img-active" />
+                <span class="home menu-active">Beranda</span>
+            </div>
+        </div>
+    </a>
+    <a href="/history">
+        <div class="item item-history">
+            <div class="main">
+                <img src="/public/img/history-menu.png" class="history" />
+                <span class="history">Riwayat</span>
+            </div>
+        </div>
+    </a>
+    <a href="/profile">
+        <div class="item item-profile">
+            <div class="main">
+                <img src="/public/img/profile-menu.png" class="profile" />
+                <span class="profile">Profil</span>
+            </div>
+        </div>
+    </a>
+</div>
+
+<%- include('../templates/footer.ejs'); %>

@@ -1,0 +1,64 @@
+<%- include('../templates/header.ejs'); %>
+
+<div class="home-student-page">
+    <div class="top">
+        <p class="name">Halo, <%= user.name %></p>
+        <h2 class="school"><%= user.school %></h2>
+    </div>
+    <div class="main">
+        <div class="list">
+            <div class="icon icon-permission">
+                <img src="/public/img/permission-icon.png" />
+            </div>
+            <div class="text">
+                <h2>Izin</h2>
+                <span>
+                    <a href="/permission">
+                        Buat Surat
+                    </a>
+                </span>
+            </div>
+        </div>
+        <div class="list">
+            <div class="icon icon-sick">
+                <img src="/public/img/sick-icon.png" />
+            </div>
+            <div class="text">
+                <h2>Sakit</h2>
+                <span>
+                    <a href="/sick">
+                        Buat Surat
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-menu">
+    <a href="/">
+            <div class="item item-home">
+                <div class="main">
+                    <img src="/public/img/home-menu-color.png" class="home img-active" />
+                    <span class="home menu-active">Beranda</span>
+                </div>
+            </div>
+        </a>
+        <a href="/history">
+            <div class="item item-history">
+                <div class="main">
+                    <img src="/public/img/history-menu.png" class="history" />
+                    <span class="history">Riwayat</span>
+                </div>
+            </div>
+        </a>
+        <a href="/profile">
+            <div class="item item-profile">
+                <div class="main">
+                    <img src="/public/img/profile-menu.png" class="profile" />
+                    <span class="profile">Profil</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<%- include('../templates/footer.ejs'); %>

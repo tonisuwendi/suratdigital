@@ -1,0 +1,79 @@
+<%- include('../templates/header.ejs'); %>
+
+<div class="container">
+    <div class="top">
+        <h2 class="title">Profil</h2>
+    </div>
+    <div class="main">
+        <div class="avatar">
+            <img src="/public/img/avatar.png" />
+        </div>
+        <h2 class="name"><%= user.name %></h2>
+        <div class="count">
+            <div class="item">
+                <i class="fa fa-plus sick"></i>
+                <h3><%= sick.length %></h3>
+                <p>Sakit</p>
+            </div>
+            <div class="item">
+                <i class="fa fa-edit permission"></i>
+                <h3><%= permission.length %></h3>
+                <p>Izin</p>
+            </div>
+            <div class="item">
+                <i class="fa fa-toggle-on dispen"></i>
+                <h3>0</h3>
+                <p>Dispen</p>
+            </div>
+            <div class="clearfix" />
+        </div>
+        <br>
+        <div class="list">
+            <p>Orang Tua Dari</p>
+            <small><%= student.name %></small>
+        </div>
+        <div class="list">
+            <p>Nomer Induk Siswa</p>
+            <small><%= user.nis %></small>
+        </div>
+        <div class="list">
+            <p>Sekolah</p>
+            <small><%= user.school %></small>
+        </div>
+        <div class="list">
+            <p>Jurusan</p>
+            <small><%= student.majors %></small>
+        </div>
+        <div class="list list-bottom">
+            <a href="/logout"><p style="color: red;"><i class="fa fa-sign-out-alt"></i> Logout</p></a>
+        </div>
+    </div>
+</div>
+<div class="bottom-menu">
+    <a href="/">
+            <div class="item item-home">
+                <div class="main">
+                    <img src="/public/img/home-menu.png" class="home img-active" />
+                    <span class="home">Beranda</span>
+                </div>
+            </div>
+        </a>
+        <a href="/history">
+            <div class="item item-history">
+                <div class="main">
+                    <img src="/public/img/history-menu.png" class="history" />
+                    <span class="history">Riwayat</span>
+                </div>
+            </div>
+        </a>
+        <a href="/profile">
+            <div class="item item-profile">
+                <div class="main">
+                    <img src="/public/img/profile-menu-color.png" class="profile" />
+                    <span class="profile menu-active">Profil</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+<%- include('../templates/footer.ejs'); %>

@@ -1,0 +1,111 @@
+div.home-student-page {
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  div.home-student-page div.top {
+  background-image: url('../img/bg-login.png');
+  background-size: cover;
+  box-sizing: border-box;
+  height: 200px;
+  padding: 20px;
+  width: 100%;
+}
+
+div.home-student-page div.top p.name {
+  color: white;
+  font-size: 15px;
+  font-family: 'Raleway';
+  margin-top: 20px;
+}
+
+div.home-student-page div.top h2.school {
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  margin-top: 5px;
+}
+
+div.home-student-page div.main {
+  height: auto;
+  margin: auto;
+  padding-bottom: 100px;
+  margin-top: -100px;
+  position: relative;
+  width: 500px;
+}
+
+div.home-student-page div.main div.list {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px 0 rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  height: 120px;
+  margin: 25px 0;
+  padding: 20px 30px;
+  width: 100%;
+}
+
+div.home-student-page div.main div.list div.icon {
+  border-radius: 50%;
+  float: left;
+  height: 70px;
+  margin-right: 20px;
+  position: relative;
+  width: 70px;
+}
+
+div.home-student-page div.main div.list div.icon-permission {
+  background-color: #007BFF;
+}
+
+div.home-student-page div.main div.list div.icon-sick {
+  background-color: #DC3545;
+}
+
+div.home-student-page div.main div.list div.icon img {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 50%;
+}
+
+div.home-student-page div.main div.list div.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 70px;
+}
+
+div.home-student-page div.main div.list div.text h2 {
+  color: #444;
+  display: inline-block;
+  font-family: 'Nunito';
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+div.home-student-page div.main div.list div.text a {
+  color: #555;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-family: 'Roboto';
+  font-size: 13px;
+  padding: 8px 15px;
+  text-decoration: none;
+}
+
+div.home-student-page div.main div.list div.text a:hover,
+div.home-student-page div.main div.list div.text a:active {
+  background-color: #eee;
+}
+
+
+@media screen and (max-width: 500px){
+  div.home-student-page div.main {
+      width: 85%;
+  }
+}

@@ -1,0 +1,24 @@
+<%- include('../templates/header.ejs'); %>
+
+<div class="auth">
+    <div class="navbar">
+        <Link to="/">
+            <img src="/public/img/back-icon.png" />
+        </Link>
+    </div>
+    <div class="container">
+        <h2 class="title">Login Guru</h2>
+        <% if(error != ""){ %>
+            <p class="error"><%= error %></p>
+        <% } %>
+        <form method="post" action="/login">
+            <label for="username">Username</label>
+            <input type="text" id="username" value="<%= username %>" name="username" class="input-login" />
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="input-login" />
+            <button type="submit">Masuk</button>
+        </form>
+    </div>
+</div>
+
+<%- include('../templates/footer.ejs'); %>

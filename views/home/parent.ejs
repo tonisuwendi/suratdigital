@@ -1,0 +1,104 @@
+<%- include('../templates/header.ejs'); %>
+
+<%
+
+function nl2br (str, is_xhtml) {
+    if (typeof str === 'undefined' || str === null) {
+        return '';
+    }
+    var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+    return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+}
+
+%>
+
+<div class="home-parent-page">
+    <div class="top">
+        <p class="name">Halo, <%= user.name %></p>
+        <h2 class="school"><%= user.school_name %></h2>
+    </div>
+    <div class="main">
+        <% if(letter.length > 0){ %>
+            <% no = 1; %>
+            <% letter.forEach(function(letter){ %>
+                <div class="list" id="list-<%= no %>">
+                    <div class="text" onclick="showLetter(<%= no %>);">
+                        <% if(letter.type == 1){ %>
+                            <h2><div class="icon icon-sick">
+                            <img src="/public/img/sick-icon.png" />
+                        <% }else{ %>
+                            <h2><div class="icon icon-permission">
+                            <img src="/public/img/permission-icon.png" />
+                        <% } %>
+                        </div><%= letter.title %></h2>
+                        <p class="date"><%= letter.date %></p>
+                        <div class="show-desc">
+                        <p class="description"><%- nl2br(letter.description) %></p>
+                            <% if(letter.file != ""){ %>
+                                <a href="/public/img/letters/<%= letter.file %>"><img src="/public/img/letters/<%= letter.file %>"></a>
+                            <% } %>
+                        </div>
+                    </div>
+                    <a href="/confirm/<%= letter.id %>" class="btn-confirm"><button>Konfirmasi Surat</button></a>
+                </div>
+            <% no++ %>
+            <% }) %>
+        <% }else{ %>
+            <div class="notfound">
+                <img src="/public/img/not.png" class="icon">
+                <p>Hore,, tidak ada surat yang harus dikonfirmasi.</p>
+            </div>
+        <% } %>
+    </div>
+    <div class="bottom-menu">
+    <a href="/">
+            <div class="item item-home">
+                <div class="main">
+                    <img src="/public/img/home-menu-color.png" class="home img-active" />
+                    <span class="home menu-active">Beranda</span>
+                </div>
+            </div>
+        </a>
+        <a href="/history">
+            <div class="item item-history">
+                <div class="main">
+                    <img src="/public/img/history-menu.png" class="history" />
+                    <span class="history">Riwayat</span>
+                </div>
+            </div>
+        </a>
+        <a href="/profile">
+            <div class="item item-profile">
+                <div class="main">
+                    <img src="/public/img/profile-menu.png" class="profile" />
+                    <span class="profile">Profil</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<% if(confirm != ""){ %>
+    <div class="modal-alert">
+        <h2 class="title">Surat Telah Dikonfirmasi</h2>
+        <img src="/public/img/send.png" class="icon">
+        <p>Surat berhasil dikonfirmasi dan telah diteruskan kepada guru.</p>
+        <a href="/"><button>Oke</button></a>
+    </div>
+    <div class="overlay"></div>
+<% } %>
+
+<%- include('../templates/footer.ejs'); %>
+<script>
+    
+    function showLetter(no){
+        let desc = $("#list-" + no + " div.show-desc");
+        if(desc.css("display") == "none"){
+            $("div.list div.text div.show-desc").slideUp('fast');
+            desc.slideDown('fast');
+        }else{
+            desc.slideUp('fast');
+        }
+    }
+
+</script>

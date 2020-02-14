@@ -1,0 +1,24 @@
+<%- include('../templates/header.ejs'); %>
+
+<div class="auth">
+    <div class="navbar">
+        <a href="/">
+            <img src="/public/img/back-icon.png" />
+        </a>
+    </div>
+    <div class="container">
+        <h2 class="title">Login Siswa</h2>
+        <% if(error != ""){ %>
+            <p class="error"><%= error %></p>
+        <% } %>
+        <form method="post" action="/login">
+            <label for="nis">NIS</label>
+            <input type="number" id="nis" name="nis" class="input-login" value="<%= nis %>" />
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="input-login" />
+            <button type="submit">Masuk</button>
+        </form>
+    </div>
+</div>
+
+<%- include('../templates/footer.ejs'); %>

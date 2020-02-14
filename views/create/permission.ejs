@@ -1,0 +1,86 @@
+<%- include('../templates/header.ejs'); %>
+
+<div class="create-letter">
+    <div class="navbar">
+        <a href="/">
+            <img src="/public/img/back-icon.png" />
+        </a>
+    </div>
+    <div class="container">
+        <h2 class="title"><img src="/public/img/permission-icon.png" class="permission" />Izin</h2>
+        <% if(error != ""){ %>
+        	<p class="error"><%= error %></p>
+        <% } %>
+        <form method="post" action="/permission" enctype="multipart/form-data">
+            <label for="title">Alasan*</label>
+            <input type="text" id="title" name="titleShow" class="input-login-first" placeholder="Menikah" autoComplete="off" value="<%= titleShow %>" />
+            <label for="ket">Keterangan*</label>
+            <textarea id="ket" name="description" placeholder="Ingin menikah"><%= description %></textarea>
+            <label form="img" class="title-letter">Gambar Lampiran <small>(jika ada)</small></label>
+            <small class="errorImg">Format gambar yang didukung adalah png, jpg, dan jpeg</small>
+            <label for="img"><div class="ss">
+                <i class="fa fa-upload"></i>
+                <p>Upload Lampiran</p>
+            </div></label>
+            <div class="prev">
+                <img src="#" id="imgPrev" class="imgPrev">
+                <i class="fa fa-times"></i>
+            </div>
+            <input type="file" name="img" id="img">
+            <label class="agree">
+                <input type="checkbox" name="check" id="check" required />
+                Dengan sadar bahwa saya membuat surat ini dengan sebenar-benarnya.
+            </label>
+            <% if(checkError != ""){ %>
+	        	<small class="checkError"><%= checkError %></small>
+	        <% } %>
+            <button type="submit">Kirim Surat</button>
+        </form>
+    </div>
+</div>
+
+<% if(send != ""){ %>
+    <div class="modal-alert">
+        <h2 class="title">Surat Izin Berhasil Dibuat</h2>
+        <img src="/public/img/send.png" class="icon">
+        <p>Surat yang sudah kamu buat telah diteruskan kepada akun orang tua. Selanjutnya orang tua harus mengonfirmasi surat tersebut untuk diteruskan kepada sekolah.</p>
+        <a href="/"><button>Kembali ke Home</button></a>
+    </div>
+    <div class="overlay"></div>
+<% } %>
+
+<%- include('../templates/footer.ejs'); %>
+<script>
+
+    $("div.prev i").on('click', function(){
+        $("div.prev").hide();
+        $("div.ss").show();
+        $("label.title-letter").text("Gambar Lampiran (jika ada)");
+    })
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        
+        reader.onload = function(e) {
+          $('#imgPrev').attr('src', e.target.result);
+        }
+        
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    $("#img").change(function(result) {
+      const formatFile = result.originalEvent.target.files[0].type;
+      if(formatFile == "image/png" || formatFile == "image/jpg" || formatFile == "image/jpeg"){
+        readURL(this);
+        $("small.errorImg").hide();
+        $("div.prev").show();
+        $("div.ss").hide();
+        $("label.title-letter").text("Preview Lampiran");
+      }else{
+        $("small.errorImg").show();
+      }
+    });
+
+</script>

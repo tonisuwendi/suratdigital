@@ -1,0 +1,93 @@
+.add-button {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+
+div.welcome-page div.container {
+    background-image: url('../img/bg-login.png');
+    background-size: cover;
+    box-sizing: border-box;
+    height: 100vh;
+    margin: auto;
+    padding: 30px;
+    width: 100%;
+}
+
+div.welcome-page div.main {
+    position: relative;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
+div.welcome-page img {
+    left: 50%;
+    margin-bottom: 20px;
+    position: relative;
+    transform: translate(-50%,0);
+    width: 100px;
+}
+
+div.welcome-page p {
+    color: #eee;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+div.welcome-page p.by {
+    color: #eee;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    text-align: center;   
+}
+
+div.welcome-page h2 {
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+div.welcome-page a.btn {
+    background-color: #02a8a8;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: white;
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    margin: 15px auto;
+    padding: 15px 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 500px;
+}
+
+div.welcome-page a.btn:hover {
+    background-color: #00918d;
+    border: 2px solid #eee;
+    padding: 13px 0;
+}
+
+div.welcome-page a.btn-teacher {
+    background-color: #7e0cf5;
+}
+
+div.welcome-page a.btn-teacher:hover {
+    background-color: #6803ea;
+}
+
+@media screen and (max-width: 450px){
+    div.welcome-page div.container {
+        height: 100vh;
+        padding: 20px;
+        width: 100%;
+    }
+
+    div.welcome-page a.btn {
+        width: 100%;
+    }
+}

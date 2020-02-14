@@ -1,0 +1,73 @@
+<%- include('../templates/header.ejs'); %>
+
+<div class="banner">
+    <p>Halo, <%= user.name %></p>
+    <h2><%= user.school_name %></h2>
+    <form action="" method="get">
+        <i class="fa fa-search"></i>
+        <input type="text" name="search" id="search" placeholder="Cari kelas disini..">
+    </form>
+</div>
+
+<div class="core">
+    <!-- <div class="create">
+        <a href="/dispen"><i class="fa fa-plus-circle"></i> Buat surat dispen</a>
+    </div> -->
+    <div class="clearfix"></div>
+    <h2 class="title">Pilih Kelas</h2>
+    <div class="list">
+        <div class="icon">
+
+        </div>
+        <div class="text">
+            <h2 class="class">Kelas XII</h2>
+            <a href="/class/xii"><button>Lihat Kelas</button></a>
+        </div>
+    </div>
+    <div class="list">
+        <div class="icon">
+
+        </div>
+        <div class="text">
+            <h2 class="class">Kelas XI</h2>
+            <a href="/class/xi"><button>Lihat Kelas</button></a>
+        </div>
+    </div>
+    <div class="list">
+        <div class="icon">
+
+        </div>
+        <div class="text">
+            <h2 class="class">Kelas X</h2>
+            <a href="/class/x"><button>Lihat Kelas</button></a>
+        </div>
+    </div>
+</div>
+<div class="bottom-menu">
+    <a href="/">
+        <div class="item item-home">
+            <div class="main">
+                <img src="/public/img/home-menu-color.png" class="home img-active" />
+                <span class="home menu-active">Beranda</span>
+            </div>
+        </div>
+    </a>
+    <a href="/history">
+        <div class="item item-history">
+            <div class="main">
+                <img src="/public/img/history-menu.png" class="history" />
+                <span class="history">Riwayat</span>
+            </div>
+        </div>
+    </a>
+    <a href="/profile">
+        <div class="item item-profile">
+            <div class="main">
+                <img src="/public/img/profile-menu.png" class="profile" />
+                <span class="profile">Profil</span>
+            </div>
+        </div>
+    </a>
+</div>
+
+<%- include('../templates/footer.ejs'); %>

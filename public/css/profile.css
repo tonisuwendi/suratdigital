@@ -1,0 +1,167 @@
+div.container {
+    background-color: #F2F4F9;
+    min-height: 100vh;
+}
+
+div.top {
+    height: 80px;
+    position: relative;
+    width: 100%;
+}
+
+div.top h2.title {
+    color: #777;
+    font-family: 'nunito';
+    font-size: 22px;
+    line-height: 80px;
+    position: relative;
+    text-align: center;
+}
+
+div.top i {
+    color: #777;
+    font-size: 22px;
+    line-height: 80px;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    z-index: 1;
+}
+
+div.main {
+    height: auto;
+    margin: auto;
+    padding-bottom: 50px;
+    position: relative;
+    width: 500px;
+}
+
+div.main div.avatar {
+    border: 1px dashed #aaa;
+    border-radius: 50%;
+    height: 120px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 5px;
+    width: 120px;
+}
+
+div.main div.avatar img {
+    width: 100%;
+}
+
+div.main h2.name {
+    color: #143EE9;
+    font-family: 'nunito';
+    font-size: 26px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+div.main h3.class {
+    color: #555;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+div.main a.dispen-letter:active,
+div.main a.dispen-letter:hover {
+    background-color: #eee;
+}
+
+div.main div.count {
+    box-sizing: border-box;
+    height: auto;
+    padding: 20px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+div.main div.count div.item {
+    float: left;
+    height: 100%;
+    width: calc(100% / 3);
+}
+
+div.main div.count div.item i {
+    border-radius: 50%;
+    box-sizing: border-box;
+    font-size: 25px;
+    height: 50px;
+    left: 50%;
+    line-height: 50px;
+    position: relative;
+    text-align: center;
+    transform: translate(-50%,0);
+    width: 50px;
+}
+
+div.main div.count div.item i.sick {
+    background-color: rgba(202,53,69,0.25);
+    color: #DC3545;
+}
+
+div.main div.count div.item i.permission {
+    background-color: #EED4FB;
+    color: #B701FF;
+}
+
+div.main div.count div.item i.dispen {
+    background-color: #F8E3B6;
+    color: #FF8000;
+}
+
+div.main div.count div.item h3 {
+    color: #555;
+    font-family: 'Nunito';
+    font-size: 30px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+div.main div.count div.item p {
+    color: #888;
+    font-family: 'Ubuntu';
+    font-size: 15px;
+    text-align: center;
+}
+
+div.main div.list {
+    background-color: white;
+    border-radius: 7px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px 0;
+    min-height: auto;
+    padding: 15px;
+}
+
+div.main div.list-bottom {
+    margin-top: 30px;
+}
+
+div.main div.list a {
+    text-decoration: none;
+}
+
+div.main div.list p {
+    color: #444;
+    font-family: 'Nunito';
+    font-size: 17px;
+}
+
+div.main div.list small {
+    color: #666;
+    font-family: 'Ubuntu';
+    font-size: 14px;
+}
+
+@media screen and (max-width: 500px){
+    div.main {
+        width: 90%;
+    }
+}

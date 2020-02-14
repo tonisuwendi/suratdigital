@@ -1,0 +1,94 @@
+<%- include('../templates/header.ejs'); %>
+
+<%
+
+function nl2br (str, is_xhtml) {
+    if (typeof str === 'undefined' || str === null) {
+        return '';
+    }
+    var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+    return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+}
+
+%>
+
+<div class="history-student-page">
+    <div class="top">
+        
+    </div>
+    <div class="text-top">
+        <h2 class="title">Riwayat Surat</h2>
+    </div>
+    <div class="main">
+        <div class="top-to-main"></div>
+        <% if(letter.length > 0){ %>
+            <% letter.forEach(function(letter){ %>
+                <div class="list" id="list-<%= letter.id %>" onclick="showLetter(<%= letter.id %>)">
+                    <div class="text">
+                        <% if(letter.type == 1){ %>
+                            <h2><div class="icon icon-sick">
+                            <img src="/public/img/sick-icon.png" />
+                        <% }else{ %>
+                            <h2><div class="icon icon-permission">
+                            <img src="/public/img/permission-icon.png" />
+                        <% } %>
+                        </div><%= letter.title %></h2>
+                        <p class="date"><%= letter.date %></p>
+                        <div class="show-desc">
+                            <p class="description"><%- nl2br(letter.description) %></p>
+                            <% if(letter.file != ""){ %>
+                                <a href="/public/img/letters/<%= letter.file %>"><img src="/public/img/letters/<%= letter.file %>"></a>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        <% }else{ %>
+            <div class="notfound">
+                <img src="/public/img/not.png" class="icon">
+                <p>Horee,, tidak ada riwayat surat disini.</p>
+            </div>
+        <% } %>
+    </div>
+    <div class="bottom-menu">
+    <a href="/">
+            <div class="item item-home">
+                <div class="main">
+                    <img src="/public/img/home-menu.png" class="home img-active" />
+                    <span class="home">Beranda</span>
+                </div>
+            </div>
+        </a>
+        <a href="/history">
+            <div class="item item-history">
+                <div class="main">
+                    <img src="/public/img/history-menu-color.png" class="history" />
+                    <span class="history menu-active">Riwayat</span>
+                </div>
+            </div>
+        </a>
+        <a href="/profile">
+            <div class="item item-profile">
+                <div class="main">
+                    <img src="/public/img/profile-menu.png" class="profile" />
+                    <span class="profile">Profil</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<%- include('../templates/footer.ejs'); %>
+<script>
+    
+    function showLetter(no){
+        let desc = $("#list-" + no + " div.show-desc");
+        if(desc.css("display") == "none"){
+            $("div.list div.text div.show-desc").slideUp('fast');
+            desc.slideDown('fast');
+        }else{
+            desc.slideUp('fast');
+        }
+    }
+
+</script>

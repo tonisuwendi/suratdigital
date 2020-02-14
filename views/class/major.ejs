@@ -1,0 +1,134 @@
+<%- include('../templates/header.ejs'); %>
+
+<div class="banner">
+    <div class="top">
+        <a href="/"><i class="fa fa-chevron-left"></i> Kembali</a>
+    </div>
+    <h2>Lebih cepat dengan pencarian..</h2>
+    <form action="" method="get">
+        <i class="fa fa-search"></i>
+        <input type="text" name="search" id="search" placeholder="Cari siswa atau kelas..">
+    </form>
+</div>
+
+<div class="core">
+    <h2 class="title"><%= kelas %></h2>
+    <a href="/class/<%= clss %>/tkj/1">
+        <div class="list">
+            <p>Teknik Komputer dan Jaringan 1</p>
+        </div>
+    </a>
+    <a href="/class/<%= clss %>/tkj/2">
+        <div class="list">
+            <p>Teknik Komputer dan Jaringan 2</p>
+        </div>
+    </a>
+    <a href="/class/<%= clss %>/mm/1">
+        <div class="list">
+            <p>Multimedia 1</p>
+        </div>
+    </a>
+    <a href="/class/<%= clss %>/mm/2">
+        <div class="list">
+            <p>Multimedia 2</p>
+        </div>
+    </a>
+    <a href="/class/<%= clss %>/bdp/1">
+        <div class="list">
+            <p>Bisnis Daring dan Pemasaran 1</p>
+        </div>
+    </a>
+    <a href="/class/<%= clss %>/bdp2/">
+        <div class="list">
+            <p>Bisnis Daring dan Pemasaran 2</p>
+        </div>
+    </a>
+    <a href="/class/<%= clss %>/otkp/1">
+        <div class="list">
+            <p>Otomatisasi Tata Kelola Perkantoran 1</p>
+        </div>
+    </a>
+    <a href="/class/<%= clss %>/otkp/2">
+        <div class="list">
+            <p>Otomatisasi Tata Kelola Perkantoran 2</p>
+        </div>
+    </a>
+    <a href="/class/<%= clss %>/otkp/3">
+        <div class="list">
+            <p>Otomatisasi Tata Kelola Perkantoran 3</p>
+        </div>
+    </a>
+    <a href="/class/<%= clss %>/akl/1">
+        <div class="list">
+            <p>Akuntansi Keuangan Lembaga 1</p>
+        </div>
+    </a>
+    <a href="/class/<%= clss %>/akl/2">
+        <div class="list">
+            <p>Akuntansi Keuangan Lembaga 2</p>
+        </div>
+    </a>
+    <a href="/class/<%= clss %>/akl/3">
+        <div class="list">
+            <p>Akuntansi Keuangan Lembaga 3</p>
+        </div>
+    </a>
+    <a href="/class/<%= clss %>/upw/1">
+        <div class="list">
+            <p>Usaha Perjalanan Wisata 1</p>
+        </div>
+    </a>
+    <a href="/class/<%= clss %>/upw/2">
+        <div class="list">
+            <p>Usaha Perjalanan Wisata 3</p>
+        </div>
+    </a>
+    <a href="/class/<%= clss %>/ph1/">
+        <div class="list">
+            <p>Perhotelan 1</p>
+        </div>
+    </a>
+    <a href="/class/<%= clss %>/ph/2">
+        <div class="list">
+            <p>Perhotelan 2</p>
+        </div>
+    </a>
+    <a href="/class/<%= clss %>/tb/1">
+        <div class="list">
+            <p>Tata Boga 1</p>
+        </div>
+    </a>
+    <a href="/class/<%= clss %>/tb/2">
+        <div class="list">
+            <p>Tata Boga 2</p>
+        </div>
+    </a>
+</div>
+<div class="bottom-menu">
+    <a href="/">
+        <div class="item item-home">
+            <div class="main">
+                <img src="/public/img/home-menu-color.png" class="home img-active" />
+                <span class="home menu-active">Beranda</span>
+            </div>
+        </div>
+    </a>
+    <a href="/history">
+        <div class="item item-history">
+            <div class="main">
+                <img src="/public/img/history-menu.png" class="history" />
+                <span class="history">Riwayat</span>
+            </div>
+        </div>
+    </a>
+    <a href="/profile">
+        <div class="item item-profile">
+            <div class="main">
+                <img src="/public/img/profile-menu.png" class="profile" />
+                <span class="profile">Profil</span>
+            </div>
+        </div>
+    </a>
+</div>
+
+<%- include('../templates/footer.ejs'); %>

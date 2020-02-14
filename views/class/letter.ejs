@@ -1,0 +1,111 @@
+<%- include('../templates/header.ejs'); %>
+
+<%
+
+function nl2br (str, is_xhtml) {
+    if (typeof str === 'undefined' || str === null) {
+        return '';
+    }
+    var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+    return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+}
+
+%>
+
+<div class="top">
+    <a href="<%= link %>"><i class="fa fa-chevron-left"></i> Kembali</a>
+</div>
+
+<div class="core">
+    <div class="letter">
+        <p class="date"><%= letter.date %></p>
+        <div class="yth">
+            <p>Yth.</p>
+            <p>Bapak/Ibu Guru</p>
+            <p>di Sekolah</p>
+        </div>
+        <div class="clearfix"></div>
+        <div class="main">
+            <p class="greet">Dengan hormat,</p>
+            <p>Dengan ini saya selaku orang tua/wali murid dari:</p>
+            <table>
+                <tr>
+                    <td><p>Nama</p></td>
+                    <td></td>
+                    <td></td>
+                    <td><p>:</p></td>
+                    <td></td>
+                    <td><p><%= letter.name %></p></td>
+                </tr>
+                <tr>
+                    <td><p>Kelas</p></td>
+                    <td></td>
+                    <td></td>
+                    <td><p>:</p></td>
+                    <td></td>
+                    <td><p><%= kelas %></p></td>
+                </tr>
+                <tr>
+                    <td><p>NIS</p></td>
+                    <td></td>
+                    <td></td>
+                    <td><p>:</p></td>
+                    <td></td>
+                    <td><p><%= letter.nis %></p></td>
+                </tr>
+            </table>
+            <p><%- nl2br(letter.description) %></p>
+            <div class="regards">
+                <p>Hormat kami</p>
+                <p class="name"><%= parent.name %></p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<% if(letter.file != ""){ %>
+<div class="core core-img">
+    <p><i class="fa fa-image"></i> Surat ini berisi gambar. Klik untuk melihat</p>
+</div>
+<% } %>
+
+<br><br><br>
+<div class="bottom-menu">
+    <a href="/">
+        <div class="item item-home">
+            <div class="main">
+                <img src="/public/img/home-menu-color.png" class="home img-active" />
+                <span class="home menu-active">Beranda</span>
+            </div>
+        </div>
+    </a>
+    <a href="/history">
+        <div class="item item-history">
+            <div class="main">
+                <img src="/public/img/history-menu.png" class="history" />
+                <span class="history">Riwayat</span>
+            </div>
+        </div>
+    </a>
+    <a href="/profile">
+        <div class="item item-profile">
+            <div class="main">
+                <img src="/public/img/profile-menu.png" class="profile" />
+                <span class="profile">Profil</span>
+            </div>
+        </div>
+    </a>
+</div>
+
+<%- include('../templates/footer.ejs'); %>
+<script>
+    
+    $("div.core-img").on('click', function(){
+        $("div.core-img p").hide();
+        $("div.core-img").html(`
+            <a href="/public/img/letters/<%= letter.file %>"><img src="/public/img/letters/<%= letter.file %>" width="100%"></a>
+        `);
+        $("div.core-img").css("padding", "10px");
+    })
+
+</script>

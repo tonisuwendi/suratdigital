@@ -1,0 +1,273 @@
+div.home-parent-page {
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  div.home-parent-page div.top {
+  background-image: url('../img/bg-login.png');
+  background-size: cover;
+  box-sizing: border-box;
+  height: 200px;
+  padding: 20px;
+  width: 100%;
+}
+
+div.home-parent-page div.top p.name {
+  color: white;
+  font-size: 15px;
+  font-family: 'Raleway';
+  margin-top: 20px;
+}
+
+div.home-parent-page div.top h2.school {
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  margin-top: 5px;
+}
+
+div.home-parent-page div.notfound {
+  background-color: white;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  border-radius: 7px;
+  height: auto;
+  margin: auto;
+  margin-top: 20px;
+  padding: 30px;
+  position: relative;
+  width: 500px;
+}
+
+div.home-parent-page div.notfound img {
+  left: 50%;
+  position: relative;
+  transform: translate(-50%,0);
+  width: 220px;
+}
+
+div.home-parent-page div.notfound p {
+  color: #555;
+  font-family: 'Public Sans';
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+div.home-parent-page div.main {
+  height: auto;
+  margin: auto;
+  padding-bottom: 100px;
+  margin-top: -100px;
+  position: relative;
+  width: 500px;
+}
+
+div.home-parent-page div.main div.list {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  height: auto;
+  margin: 15px 0;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+}
+
+div.home-parent-page div.main div.list div.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 60px;
+  position: relative;
+}
+
+div.home-parent-page div.main div.list div.text div.icon {
+  border-radius: 50%;
+  float: left;
+  height: 27px;
+  position: relative;
+  margin-right: 10px;
+  position: relative;
+  width: 27px;
+}
+
+div.home-parent-page div.main div.list div.text div.icon-permission {
+  background-color: #007BFF;
+}
+
+div.home-parent-page div.main div.list div.text div.icon-sick {
+  background-color: #DC3545;
+}
+
+div.home-parent-page div.main div.list div.text div.icon img {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 50%;
+}
+
+div.home-parent-page div.main div.list div.text h2 {
+  color: #444;
+  display: inline-block;
+  font-family: 'Nunito';
+  font-size: 22px;
+  margin-bottom: 7px;
+}
+
+div.home-parent-page div.main div.list div.text p.date {
+  bottom: 22px;
+  color: #777;
+  margin-left: 37px;
+  font-size: 12px;
+}
+
+div.home-parent-page div.main div.list div.text div.show-desc {
+  display: none;
+}
+
+div.home-parent-page div.main div.list div.text div.show-desc img {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+div.home-parent-page div.main div.list div.text div.show-desc p.description {
+  color: #777;
+  font-family: 'Public Sans';
+  font-size: 14px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+div.home-parent-page div.main div.list div.text i {
+  color: #555;
+  font-size: 16px;
+  right: 0;
+  position: absolute;
+  top: 20px;
+}
+
+div.home-parent-page div.main div.list button {
+  background-color: #17A2B8;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-family: 'Raleway';
+  font-size: 13px;
+  height: 40px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+div.home-parent-page div.main div.list div.text a:hover,
+div.home-parent-page div.main div.list div.text a:active {
+  background-color: #eee;
+}
+
+div.overlay {
+  background-color: rgba(0,0,0,0.5);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+div.modal-alert {
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0 3px 10px 0 rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  height: auto;
+  left: 50%;
+  padding: 30px;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 500px;
+  z-index: 99;
+}
+
+div.modal-alert span.close-modal i{
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 1px 2px 10px rgba(0,0,0,0.15);
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  text-align: center;
+  width: 30px;
+}
+
+div.modal-alert h2.title {
+  color: #444;
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+div.modal-alert img.icon {
+  animation: img 1.5s infinite linear;
+  left: 50%;
+  margin: auto;
+  margin-top: 15px;
+  position: relative;
+  transform: translate(-50%,0);
+  width: 120px;
+}
+
+ @keyframes img {
+  0% {transform: translate(-50%,0) scale(1)}
+  50% {transform: translate(-50%,0) scale(1.1)}
+  100% {transform: translate(-50%,0) scale(1)}
+ }
+
+div.modal-alert p {
+  color: #555;
+  font-family: 'Public Sans', sans-serif;
+  font-size: 15px;
+  margin-top: 15px;
+  text-align: justify;
+}
+
+div.modal-alert button {
+  background-color: #36BFF5;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Nunito';
+  font-size: 15px;
+  height: 45px;
+  margin-top: 15px;
+  outline: none;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+div.modal-alert button:hover,
+div.modal-alert button:active {
+  background-color: #28B5E0;
+}
+
+
+@media screen and (max-width: 500px){
+  div.home-parent-page div.main {
+      width: 85%;
+  }
+
+  div.home-parent-page div.notfound {
+    width: 95%;
+  }
+
+  div.modal-alert {
+    width: 90%;
+  }
+}

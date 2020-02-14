@@ -1,0 +1,100 @@
+div.top {
+    background-color: #05AFD6;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    padding: 20px;
+    width: 100%;
+}
+
+div.top a {
+    color: white;
+    font-family: 'Roboto';
+    font-size: 18px;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+div.top a i {
+    margin-right: 3px;
+}
+
+div.core {
+    height: auto;
+    margin: auto;
+    margin-bottom: 100px;
+    position: relative;
+    width: 500px;
+}
+
+div.core h2.title {
+    color: #444444;
+    font-family: 'Nunito';
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+div.core a {
+    text-decoration: none;
+}
+
+div.core div.list {
+    background-color: white;
+    box-shadow: 0 1px 7px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: auto;
+    margin: 20px 0;
+    padding: 20px;
+    width: 100%;
+}
+
+div.core div.list h2.name {
+    color: #555;
+    font-size: 19px;
+}
+
+div.core div.list p {
+    color: #666;
+    font-family: 'Roboto';
+    font-size: 16px;
+    margin-top: 7px;
+}
+
+div.core div.list p span {
+    background-color: #DC3545;
+    border-radius: 4px;
+    color: white;
+    font-family: 'Public Sans';
+    font-size: 14px;
+    margin-left: 5px;
+    padding: 4px 5px;
+}
+
+div.core div.list p span.permi {
+    background-color: #B701FF;
+}
+
+div.core div.list p span.disp {
+    background-color: #FF8000;
+}
+
+div.core div.list-not img {
+  left: 50%;
+  position: relative;
+  transform: translate(-50%,0);
+  width: 220px;
+}
+
+div.core div.list-not p {
+  color: #555;
+  font-family: 'Public Sans';
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+@media screen and (max-width: 500px){
+    div.core {
+        width: 90%;
+    }
+}

@@ -1,0 +1,85 @@
+body {
+    background-color: #F1F5F9;
+}
+
+div.wrapper {
+    height: auto;
+    margin: auto;
+    width: 500px;
+}
+
+div.wrapper div.top {
+    border-bottom: 1px solid #dddddd;
+    box-sizing: border-box;
+    height: 70px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+div.wrapper div.top h2 {
+    color: #222222;
+    font-family: 'Nunito';
+    font-size: 20px;
+    line-height: 70px;
+}
+
+div.wrapper div.core {
+    margin: auto;
+    margin-top: 20px;
+    width: 90%;
+}
+
+div.wrapper div.core div.list {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 2px 25px rgba(0,0,0,0.1);
+    height: 80px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+div.wrapper div.core div.list div.icon {
+    float: left;
+    height: 100%;
+    position: relative;
+    width: 40%;
+}
+
+div.wrapper div.core div.list div.icon img {
+    height: 80%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+div.wrapper div.core div.list div.text {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    justify-content: center;
+    min-height: 100%;
+    position: relative;
+    width: 60%;
+}
+
+div.wrapper div.core div.list div.text h4 {
+    color: #444;
+    font-family: 'Public Sans';
+    font-size: 17px;
+}
+
+div.wrapper div.core div.list div.text p {
+    color: #777;
+    font-family: 'Roboto';
+    font-size: 14.5px;
+    margin-top: 2px;
+}
+
+
+
+@media screen and (max-width: 500px) {
+    div.wrapper {
+        width: 100%;
+    }
+}
